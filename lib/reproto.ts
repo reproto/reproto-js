@@ -13,7 +13,7 @@ const CACHE_DIR = path.join(os.homedir(), '.reproto-js-cache');
 const RELEASE_FILE = path.join(CACHE_DIR, 'release');
 const BIN_DIR = path.join(CACHE_DIR, ".bin");
 const FILE_BASE = 'reproto';
-const DOWNLOAD_THRESHOLD = 1000 * 60 * 60 * 24;
+const DOWNLOAD_THRESHOLD = 1000 * 60 * 60;
 
 function get_arch(): string {
     switch (process.arch) {
