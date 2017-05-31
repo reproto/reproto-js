@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["typings/*"]
+    },
+    "lib": [
+      "es6"
+    ],
+    "types": [
+      "node"
+    ],
+    "target": "es6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true
+  },
+  "files": [
+    "lib/reproto.ts"
+  ]
+}

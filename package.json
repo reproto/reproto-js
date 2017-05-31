@@ -1,0 +1,33 @@
+{
+  "name": "reproto-js",
+  "version": "0.0.10",
+  "description": "JavaScript Bindings for ReProto",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc"
+  },
+  "bin": {
+    "reproto": "./bin/reproto"
+  },
+  "main": "./lib/reproto.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/reproto/reproto-js.git"
+  },
+  "author": "John-John Tedro",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/reproto/reproto-js/issues"
+  },
+  "homepage": "https://github.com/reproto/reproto-js#readme",
+  "dependencies": {
+    "tar": "^3.1.3"
+  },
+  "devDependencies": {
+    "@types/mkdirp": "^0.3.29",
+    "@types/node": "^7.0.22",
+    "@types/tar": "^1.0.29",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.4"
+  }
+}
