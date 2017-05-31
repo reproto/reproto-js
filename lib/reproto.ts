@@ -96,7 +96,7 @@ async function read_release_file(): Promise<string> {
         return null;
     }
 
-    return await read_file(RELEASE_FILE);
+    return await read_file(RELEASE_FILE).then(value => value.trim());
 }
 
 function write_release_file(version: string): Promise<void> {
@@ -151,7 +151,7 @@ async function download_cache(): Promise<string> {
     await ensure_directory_exists(CACHE_DIR);
     await ensure_directory_exists(BIN_DIR);
 
-    let release_version = (await read_release_file()).trim();
+    let release_version = await read_release_file();
 
     let should_download = false;
 
