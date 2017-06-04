@@ -154,6 +154,7 @@ async function download_cache(): Promise<string> {
     let release_version = await read_release_file();
 
     let should_download = false;
+    let should_write_release = false;
 
     if (await should_check_for_updates(release_version)) {
         console.info(`${ME}: Checking for new version`);
@@ -165,6 +166,7 @@ async function download_cache(): Promise<string> {
         }
 
         release_version = upstream_version;
+        should_write_release = true;
     }
 
     let file_name = `${FILE_BASE}-${release_version}-${os}-${arch}.tar.gz`;
@@ -191,12 +193,12 @@ async function download_cache(): Promise<string> {
         await unpack_archive(local_file, BIN_DIR);
     }
 
-    if (should_download) {
-        await write_release_file(release_version);
-    }
-
     if (!await exists(bin_path)) {
         throw new Error(`${ME}: Binary does not exist: ${bin_path}`);
+    }
+
+    if (should_write_release) {
+        await write_release_file(release_version);
     }
 
     return bin_path;
